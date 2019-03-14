@@ -1,0 +1,57 @@
+{
+  "name": "@amplify-app/create",
+  "version": "0.1.0",
+  "description": "AWS Amplify Apps creator",
+  "author": "Victor Vlasenko <victor.vlasenko@sysgears.com>",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sysgears/larix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sysgears/larix/issues"
+  },
+  "homepage": "https://github.com/sysgears/larix/tree/master/packages/create#readme",
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json -w",
+    "lint": "tslint -p tsconfig.json --fix -c ../../tslint.json",
+    "tests": "jest --passWithNoTests",
+    "test": "yarn tests && yarn lint",
+    "prepublishOnly": "yarn clean && yarn build"
+  },
+  "bin": {
+    "create": "create.js"
+  },
+  "files": [
+    "create.js",
+    "lib/*.js",
+    "lib/*.d.ts",
+    "lib/*.map",
+    "templates"
+  ],
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "parser": "babylon"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "@larix/generator": ">= 0.1.0",
+    "source-map-support": "^0.5.6"
+  }
+}
