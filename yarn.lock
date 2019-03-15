@@ -276,10 +276,10 @@
     "@types/istanbul-lib-coverage" "^1.1.0"
     "@types/yargs" "^12.0.9"
 
-"@larix/generator@>= 0.1.0":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@larix/generator/-/generator-0.1.3.tgz#c3cef214fc328ed69012185c757177554e685c98"
-  integrity sha512-BjVteNpiSjPJ7qZ8BzL1t15+87+Jn7JFGAsSMQiBtdY5rtbnEz0eWwK72SDp7u2q/I7/4Xa/kNzvThUlTYVo8Q==
+"@larix/generator@>= 0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@larix/generator/-/generator-0.1.4.tgz#a8083252d9b11a530e2f8ced9fb07afee650e8d3"
+  integrity sha512-jMgHBlqJ77fPQ+13ScZK62t0iKD6jzIFjGMvOB7DpV6f547FbWdWgtniY5KH/sGKSjsSpAmFtZlmKvN914XC6w==
   dependencies:
     chalk "^2.4.1"
     fuzzy "^0.1.3"
