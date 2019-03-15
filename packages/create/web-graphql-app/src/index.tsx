@@ -26,13 +26,17 @@ const createApolloClient = () => {
     })
   );
 
-  const appSyncLink = createAppSyncLink({
+  const commonConfig = {
     auth: {
       type: AUTH_TYPE.API_KEY,
       apiKey: aws_config.aws_appsync_apiKey
     },
     region: aws_config.aws_appsync_region,
-    url: aws_config.aws_appsync_graphqlEndpoint,
+    url: aws_config.aws_appsync_graphqlEndpoint
+  }
+
+  const appSyncLink = createAppSyncLink({
+    ...commonConfig,
     complexObjectsCredentials: () => null
   });
 
@@ -40,12 +44,7 @@ const createApolloClient = () => {
 
   return new AWSAppSyncClient(
     {
-      auth: {
-        type: AUTH_TYPE.API_KEY,
-        apiKey: aws_config.aws_appsync_apiKey
-      },
-      region: aws_config.aws_appsync_region,
-      url: aws_config.aws_appsync_graphqlEndpoint,
+      ...commonConfig,
       disableOffline: true
     },
     { link }
