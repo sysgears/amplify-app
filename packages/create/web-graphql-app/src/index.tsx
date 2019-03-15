@@ -1,27 +1,59 @@
-import ApolloClient from 'apollo-boost';
 import * as React from 'react';
+import Amplify from 'aws-amplify';
+import AWSAppSyncClient, { AUTH_TYPE, createAppSyncLink, createLinkWithCache } from 'aws-appsync';
 import { ApolloProvider } from 'react-apollo';
+import { ApolloLink } from 'apollo-link';
+import { withClientState } from 'apollo-link-state';
 import { render } from 'react-dom';
 
 import App from './App';
 
-const GRAPHQL_API_URL = 'http://localhost:8080/graphql';
+import aws_config from './aws-exports';
 
-const client = new ApolloClient({
-  clientState: {
-    resolvers: {
-      Query: {
-        localHello(obj: any, { subject }: { subject: string }) {
-          return `Hello, ${subject}! from Web UI`;
+Amplify.configure(aws_config);
+
+const createApolloClient = () => {
+  const stateLink = createLinkWithCache(cache =>
+    withClientState({
+      cache,
+      resolvers: {
+        Query: {
+          localHello(obj: any, { subject }: { subject: string }) {
+            return `Hello, ${subject}! from Web UI`;
+          }
         }
       }
-    }
-  },
-  uri: GRAPHQL_API_URL
-});
+    })
+  );
+
+  const appSyncLink = createAppSyncLink({
+    auth: {
+      type: AUTH_TYPE.API_KEY,
+      apiKey: aws_config.aws_appsync_apiKey
+    },
+    region: aws_config.aws_appsync_region,
+    url: aws_config.aws_appsync_graphqlEndpoint,
+    complexObjectsCredentials: () => null
+  });
+
+  const link = ApolloLink.from([stateLink, appSyncLink]);
+
+  return new AWSAppSyncClient(
+    {
+      auth: {
+        type: AUTH_TYPE.API_KEY,
+        apiKey: aws_config.aws_appsync_apiKey
+      },
+      region: aws_config.aws_appsync_region,
+      url: aws_config.aws_appsync_graphqlEndpoint,
+      disableOffline: true
+    },
+    { link }
+  );
+};
 
 render(
-  <ApolloProvider client={client}>
+  <ApolloProvider client={createApolloClient()}>
     <App />
   </ApolloProvider>,
   document.getElementById('root')
