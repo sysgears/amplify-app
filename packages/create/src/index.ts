@@ -25,7 +25,7 @@ process
   });
 
   const CODEGEN="{\
-    \"generateCode\":true\
+    \"generateCode\":false\
     }"
 
   await new Promise(resolve => {
