@@ -9,4 +9,5 @@ package-lock.json
 .idea
 .npmrc
 *.log
+.DS_Store
 

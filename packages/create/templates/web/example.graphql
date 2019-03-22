@@ -1,0 +1,4 @@
+type Subject @model {
+  id: ID
+  Subject: String!
+}
