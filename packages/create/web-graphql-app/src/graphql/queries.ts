@@ -4,7 +4,7 @@
 export const getSubject = `query GetSubject($id: ID!) {
   getSubject(id: $id) {
     id
-    Subject
+    subject
   }
 }
 `;
@@ -16,7 +16,7 @@ export const listSubjects = `query ListSubjects(
   listSubjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      Subject
+      subject
     }
     nextToken
   }

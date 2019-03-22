@@ -19,28 +19,14 @@ process
 
   process.chdir(`./${appName}`);
 
-  const AMPLIFY = '{\
-    "projectName":"web-graphql",\
-    "envName":"dev"\
-    }';
-
-  const REACTCONFIG =
-    '{\
-    "SourceDir":"src",\
-    "DistributionDir":"build",\
-    "BuildCommand":"yarn build",\
-    "StartCommand":"yarn start"\
-    }';
-
-  const FRONTEND = `{\
-    \"frontend\":\"javascript\",\
-    \"framework\":\"react\",\
-    \"config\": ${REACTCONFIG}
-    }`;
+  await new Promise(resolve => {
+    const amplifyInit = spawn('amplify', ['init'], { stdio: 'inherit' });
+    amplifyInit.on('close', resolve);
+  });
 
   await new Promise(resolve => {
-    const amplify = spawn('amplify', ['init', '--amplify', AMPLIFY, '--frontend', FRONTEND], { stdio: 'inherit' });
-    amplify.on('close', resolve);
+    const amplifyPush = spawn('amplify', ['push'], { stdio: 'inherit' });
+    amplifyPush.on('close', resolve);
   });
 
   console.log(`App ${chalk.green(appName)} generated successfully! Execute commands below to start it:\n`);

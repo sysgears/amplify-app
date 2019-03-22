@@ -4,21 +4,21 @@
 export const onCreateSubject = `subscription OnCreateSubject {
   onCreateSubject {
     id
-    Subject
+    subject
   }
 }
 `;
 export const onUpdateSubject = `subscription OnUpdateSubject {
   onUpdateSubject {
     id
-    Subject
+    subject
   }
 }
 `;
 export const onDeleteSubject = `subscription OnDeleteSubject {
   onDeleteSubject {
     id
-    Subject
+    subject
   }
 }
 `;

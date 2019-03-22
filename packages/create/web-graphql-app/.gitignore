@@ -10,3 +10,4 @@ amplify/backend/awscloudformation
 build/
 dist/
 node_modules/
+.graphqlconfig.yml

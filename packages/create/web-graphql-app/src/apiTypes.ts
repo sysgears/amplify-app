@@ -3,12 +3,12 @@
 
 export type CreateSubjectInput = {
   id?: string | null,
-  Subject: string,
+  subject: string,
 };
 
 export type UpdateSubjectInput = {
   id: string,
-  Subject?: string | null,
+  subject?: string | null,
 };
 
 export type DeleteSubjectInput = {
@@ -17,7 +17,7 @@ export type DeleteSubjectInput = {
 
 export type ModelSubjectFilterInput = {
   id?: ModelIDFilterInput | null,
-  Subject?: ModelStringFilterInput | null,
+  subject?: ModelStringFilterInput | null,
   and?: Array< ModelSubjectFilterInput | null > | null,
   or?: Array< ModelSubjectFilterInput | null > | null,
   not?: ModelSubjectFilterInput | null,
@@ -57,7 +57,7 @@ export type CreateSubjectMutation = {
   createSubject:  {
     __typename: "Subject",
     id: string | null,
-    Subject: string,
+    subject: string,
   } | null,
 };
 
@@ -69,7 +69,7 @@ export type UpdateSubjectMutation = {
   updateSubject:  {
     __typename: "Subject",
     id: string | null,
-    Subject: string,
+    subject: string,
   } | null,
 };
 
@@ -81,7 +81,7 @@ export type DeleteSubjectMutation = {
   deleteSubject:  {
     __typename: "Subject",
     id: string | null,
-    Subject: string,
+    subject: string,
   } | null,
 };
 
@@ -93,7 +93,7 @@ export type GetSubjectQuery = {
   getSubject:  {
     __typename: "Subject",
     id: string | null,
-    Subject: string,
+    subject: string,
   } | null,
 };
 
@@ -109,7 +109,7 @@ export type ListSubjectsQuery = {
     items:  Array< {
       __typename: "Subject",
       id: string | null,
-      Subject: string,
+      subject: string,
     } | null > | null,
     nextToken: string | null,
   } | null,
@@ -119,7 +119,7 @@ export type OnCreateSubjectSubscription = {
   onCreateSubject:  {
     __typename: "Subject",
     id: string | null,
-    Subject: string,
+    subject: string,
   } | null,
 };
 
@@ -127,7 +127,7 @@ export type OnUpdateSubjectSubscription = {
   onUpdateSubject:  {
     __typename: "Subject",
     id: string | null,
-    Subject: string,
+    subject: string,
   } | null,
 };
 
@@ -135,6 +135,6 @@ export type OnDeleteSubjectSubscription = {
   onDeleteSubject:  {
     __typename: "Subject",
     id: string | null,
-    Subject: string,
+    subject: string,
   } | null,
 };
