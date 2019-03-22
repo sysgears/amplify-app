@@ -24,8 +24,12 @@ process
     amplifyInit.on('close', resolve);
   });
 
+  const CODEGEN="{\
+    \"generateCode\":true\
+    }"
+
   await new Promise(resolve => {
-    const amplifyPush = spawn('amplify', ['push'], { stdio: 'inherit' });
+    const amplifyPush = spawn('amplify', ['push', '--codegen', CODEGEN], { stdio: 'inherit' });
     amplifyPush.on('close', resolve);
   });
 

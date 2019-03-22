@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "apollo-link": "^1.2.11",
+    "apollo-link-state": "^0.4.2",
+  }
+}
