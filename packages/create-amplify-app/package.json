@@ -1,6 +1,6 @@
 {
-  "name": "@amplify-app/create",
-  "version": "0.1.4",
+  "name": "create-amplify-app",
+  "version": "0.1.0",
   "description": "AWS Amplify Apps creator",
   "author": "Victor Vlasenko <victor.vlasenko@sysgears.com>",
   "main": "lib/index.js",

@@ -9,7 +9,7 @@
       "node_modules",
       "dist",
       "lib",
-      "packages/create-apollo-app/templates/**/*"
+      "packages/create-amplify-app/templates/**/*"
     ]
   },
   "rules": {
