@@ -1,7 +1,6 @@
 import generate, { templateWriter } from '@larix/generator';
 import chalk from 'chalk';
 import { spawn } from 'child_process';
-import * as path from 'path';
 import 'source-map-support/register';
 
 import templates from './templates';
@@ -20,11 +19,7 @@ process
 
   process.chdir(`./${appName}`);
 
-  const binaryExt = /^win/.test(process.platform) ? '.cmd' : '';
-  const amplify = path.join(
-    path.dirname(require.resolve('@aws-amplify/cli/package.json')),
-    '../../.bin/amplify' + binaryExt
-  );
+  const amplify = require.resolve('@aws-amplify/cli/bin/amplify');
 
   await new Promise(resolve => {
     const amplifyInit = spawn('node', [amplify, 'init'], { stdio: 'inherit' });
