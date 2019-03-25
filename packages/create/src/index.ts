@@ -19,8 +19,10 @@ process
 
   process.chdir(`./${appName}`);
 
+  const amplify = '../node_modules/.bin/amplify'
+
   await new Promise(resolve => {
-    const amplifyInit = spawn('amplify', ['init'], { stdio: 'inherit' });
+    const amplifyInit = spawn('node', [amplify, 'init'], { stdio: 'inherit' });
     amplifyInit.on('close', resolve);
   });
 
@@ -29,7 +31,7 @@ process
     }"
 
   await new Promise(resolve => {
-    const amplifyPush = spawn('amplify', ['push', '--codegen', CODEGEN], { stdio: 'inherit' });
+    const amplifyPush = spawn('node', [amplify, 'push', '--codegen', CODEGEN], { stdio: 'inherit' });
     amplifyPush.on('close', resolve);
   });
 
