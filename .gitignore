@@ -1,10 +1,13 @@
 /.vscode
 /.history
 /.npmrc
+*.cache
+build
 node_modules
 lib
 package-lock.json
 .idea
 .npmrc
 *.log
+.DS_Store
 
