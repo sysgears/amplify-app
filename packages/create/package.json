@@ -1,6 +1,6 @@
 {
   "name": "@amplify-app/create",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AWS Amplify Apps creator",
   "author": "Victor Vlasenko <victor.vlasenko@sysgears.com>",
   "main": "lib/index.js",
@@ -24,10 +24,10 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "bin": {
-    "create": "create-amplify-app.js"
+    "create-amplify-app": "create-amplify-app.js"
   },
   "files": [
-    "create.js",
+    "create-amplify-app.js",
     "lib/*.js",
     "lib/*.d.ts",
     "lib/*.map",
