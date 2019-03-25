@@ -1,6 +1,6 @@
 {
   "name": "@amplify-app/create",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AWS Amplify Apps creator",
   "author": "Victor Vlasenko <victor.vlasenko@sysgears.com>",
   "main": "lib/index.js",
@@ -16,15 +16,15 @@
   "homepage": "https://github.com/sysgears/larix/tree/master/packages/create#readme",
   "scripts": {
     "clean": "rm -rf ./lib",
-    "build": "tsc -p tsconfig.json",
-    "watch": "tsc -p tsconfig.json -w",
+    "build": "tsc",
+    "watch": "tsc -w",
     "lint": "tslint -p tsconfig.json --fix -c ../../tslint.json",
     "tests": "jest --passWithNoTests",
     "test": "yarn tests && yarn lint",
     "prepublishOnly": "yarn clean && yarn build"
   },
   "bin": {
-    "create": "create.js"
+    "create": "create-amplify-app.js"
   },
   "files": [
     "create.js",
