@@ -1,6 +1,6 @@
 import generate, { templateWriter } from '@larix/generator';
-import { spawn } from 'child_process';
 import chalk from 'chalk';
+import { spawn } from 'child_process';
 import 'source-map-support/register';
 
 import templates from './templates';
@@ -19,16 +19,16 @@ process
 
   process.chdir(`./${appName}`);
 
-  const amplify = '../node_modules/.bin/amplify'
+  const amplify = '../node_modules/.bin/amplify';
 
   await new Promise(resolve => {
     const amplifyInit = spawn('node', [amplify, 'init'], { stdio: 'inherit' });
     amplifyInit.on('close', resolve);
   });
 
-  const CODEGEN="{\
-    \"generateCode\":false\
-    }"
+  const CODEGEN = '{\
+    "generateCode":false\
+    }';
 
   await new Promise(resolve => {
     const amplifyPush = spawn('node', [amplify, 'push', '--codegen', CODEGEN], { stdio: 'inherit' });
