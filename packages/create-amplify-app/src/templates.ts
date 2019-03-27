@@ -27,10 +27,10 @@ const templates: Template[] = [
   //   title: '@server-rest: TypeScript, REST, Express server',
   //   files: getTemplateFilePaths(__dirname + '/../templates/server-rest')
   // },
-  {
-    title: '@web-rest: TypeScript, REST, React web app',
-    files: getTemplateFilePaths(__dirname + '/../templates/web-rest')
-  },
+  // {
+  //   title: '@web-rest: TypeScript, REST, React web app',
+  //   files: getTemplateFilePaths(__dirname + '/../templates/web-rest')
+  // },
   // {
   //   title: '@mobile-rest: TypeScript, REST, React Native for mobile',
   //   files: getTemplateFilePaths(__dirname + '/../templates/mobile-rest')
@@ -58,6 +58,10 @@ const templates: Template[] = [
   {
     title: '@amplify-web-graphql: TypeScript, Amplify (GraphQL), React web app',
     files: getTemplateFilePaths(__dirname + '/../templates/amplify-web')
+  },
+  {
+    title: '@amplify-web-rest: TypeScript, Amplify (REST), React web app',
+    files: getTemplateFilePaths(__dirname + '/../templates/amplify-web-rest')
   }
   // {
   //   title: '@mobile-graphql: TypeScript, Apollo (GraphQL), React Native for mobile',

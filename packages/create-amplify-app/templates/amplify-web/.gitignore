@@ -17,5 +17,6 @@ amplify/.config/local-*
 amplify/backend/amplify-meta.json
 amplify/team-provider-info.json
 amplify/backend/awscloudformation
+dist/
 aws-exports.js
 awsconfiguration.json
