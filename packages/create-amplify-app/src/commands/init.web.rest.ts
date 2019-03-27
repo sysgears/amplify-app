@@ -1,8 +1,6 @@
-const { spawn } = require('child_process');
+import { spawn } from 'child_process';
 
-(async () => {
-  const amplify = require.resolve('@aws-amplify/cli/bin/amplify');
-
+const initWebRest = async amplify => {
   process.chdir(`./amplify/backend/function/rest/src`);
 
   await new Promise(resolve => {
@@ -14,4 +12,6 @@ const { spawn } = require('child_process');
     const amplifyPush = spawn('node', [amplify, 'push', '--yes'], { stdio: 'inherit' });
     amplifyPush.on('close', resolve);
   });
-})();
+};
+
+export default initWebRest;
