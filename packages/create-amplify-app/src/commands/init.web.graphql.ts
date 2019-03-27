@@ -1,14 +1,14 @@
-const { spawn } = require('child_process');
+import { spawn } from 'child_process';
 
-(async () => {
-  const amplify = require.resolve('@aws-amplify/cli/bin/amplify');
-
-  const CODEGEN = '{\
+const CODEGEN = '{\
     "generateCode":false\
     }';
 
+const initWebGraphql = async amplify => {
   await new Promise(resolve => {
     const amplifyPush = spawn('node', [amplify, 'push', '--codegen', CODEGEN, '--yes'], { stdio: 'inherit' });
     amplifyPush.on('close', resolve);
   });
-})();
+};
+
+export default initWebGraphql;

@@ -3,6 +3,8 @@ import chalk from 'chalk';
 import { spawn } from 'child_process';
 import 'source-map-support/register';
 
+import initWebGraphql from './commands/init.web.graphql';
+import initWebRest from './commands/init.web.rest';
 import templates from './templates';
 
 process
@@ -25,16 +27,7 @@ process
     amplifyInit.on('close', resolve);
   });
 
-  await new Promise(resolve => {
-    const amplifyPush = spawn(
-      'node',
-      [
-        `${templateId.includes('graphql') ? '../src/commands/init.web.graphql.js' : '../src/commands/init.web.rest.js'}`
-      ],
-      { stdio: 'inherit' }
-    );
-    amplifyPush.on('close', resolve);
-  });
+  templateId.includes('graphql') ? await initWebGraphql(amplify) : await initWebRest(amplify);
 
   console.log(`App ${chalk.green(appName)} generated successfully! Execute commands below to start it:\n`);
   console.log(chalk.yellow(`cd ${appName}`));
