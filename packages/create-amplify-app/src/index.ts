@@ -28,7 +28,9 @@ process
   await new Promise(resolve => {
     const amplifyPush = spawn(
       'node',
-      [`${templateId.includes('graphql') ? '../src/commands/web.graphql.js' : '../src/commands/web.rest.js'}`],
+      [
+        `${templateId.includes('graphql') ? '../src/commands/init.web.graphql.js' : '../src/commands/init.web.rest.js'}`
+      ],
       { stdio: 'inherit' }
     );
     amplifyPush.on('close', resolve);
