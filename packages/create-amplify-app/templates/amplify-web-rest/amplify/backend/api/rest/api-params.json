@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/hello",
+            "lambdaFunction": "rest",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "rest",
+    "apiName": "rest",
+    "functionArns": [
+        {
+            "lambdaFunction": "rest"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-web-rest-20190326155133-authRole",
+        "unAuthRoleName": "amplify-web-rest-20190326155133-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "rest",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -51,13 +51,17 @@ const templates: Template[] = [
   //   title: '@server-graphql: TypeScript, Apollo (GraphQL), Express server',
   //   files: getTemplateFilePaths(__dirname + '/../templates/server')
   // },
-  {
-    title: '@web-graphql: TypeScript, Apollo (GraphQL), React web app',
-    files: getTemplateFilePaths(__dirname + '/../templates/web')
-  },
+  // {
+  //   title: '@web-graphql: TypeScript, Apollo (GraphQL), React web app',
+  //   files: getTemplateFilePaths(__dirname + '/../templates/web')
+  // },
   {
     title: '@amplify-web-graphql: TypeScript, Amplify (GraphQL), React web app',
     files: getTemplateFilePaths(__dirname + '/../templates/amplify-web')
+  },
+  {
+    title: '@amplify-web-rest: TypeScript, Amplify (REST), React web app',
+    files: getTemplateFilePaths(__dirname + '/../templates/amplify-web-rest')
   }
   // {
   //   title: '@mobile-graphql: TypeScript, Apollo (GraphQL), React Native for mobile',

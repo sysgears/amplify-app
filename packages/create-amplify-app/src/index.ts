@@ -15,8 +15,7 @@ process
   });
 
 (async () => {
-  const { appName } = await generate(templates, templateWriter, 'yarn create @amplify-app', process.argv);
-
+  const { appName, templateId } = await generate(templates, templateWriter, 'yarn create @amplify-app', process.argv);
   process.chdir(`./${appName}`);
 
   const amplify = require.resolve('@aws-amplify/cli/bin/amplify');
@@ -26,12 +25,12 @@ process
     amplifyInit.on('close', resolve);
   });
 
-  const CODEGEN = '{\
-    "generateCode":false\
-    }';
-
   await new Promise(resolve => {
-    const amplifyPush = spawn('node', [amplify, 'push', '--codegen', CODEGEN], { stdio: 'inherit' });
+    const amplifyPush = spawn(
+      'node',
+      [`${templateId.includes('graphql') ? '../src/commands/web.graphql.js' : '../src/commands/web.rest.js'}`],
+      { stdio: 'inherit' }
+    );
     amplifyPush.on('close', resolve);
   });
 
