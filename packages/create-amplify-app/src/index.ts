@@ -3,8 +3,8 @@ import chalk from 'chalk';
 import { spawn } from 'child_process';
 import 'source-map-support/register';
 
-import initWebGraphql from './commands/init.web.graphql';
-import initWebRest from './commands/init.web.rest';
+import initWebGraphql from './commands/initWebGraphql';
+import initWebRest from './commands/initWebRest';
 import templates from './templates';
 
 process
