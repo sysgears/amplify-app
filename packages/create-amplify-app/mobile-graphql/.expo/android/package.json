@@ -1,0 +1,21 @@
+{
+  "name": "mobile-graphql-android",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "zen -e ios -e android start",
+    "android": "zen -d web -d ios -e android start",
+    "ios": "zen -d web -d ios -e android start",
+    "build": "cross-env NODE_ENV=production zen build",
+    "exp": "cross-env NODE_ENV=production zen exp",
+    "test": "zen test"
+  },
+  "dependencies": {
+    "react": "16.8.2",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
+  },
+  "resolutions": {
+    "@types/react": "16.8.2"
+  },
+  "main": "index.mobile"
+}
