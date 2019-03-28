@@ -1,4 +1,0 @@
-{
-    "AppSyncApiName": "mobilegraphql",
-    "DynamoDBBillingMode": "PAY_PER_REQUEST"
-}
