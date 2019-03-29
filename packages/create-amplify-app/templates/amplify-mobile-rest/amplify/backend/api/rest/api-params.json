@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/hello",
+            "lambdaFunction": "rest",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "rest",
+    "apiName": "rest",
+    "functionArns": [
+        {
+            "lambdaFunction": "rest"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "mobile-rest-20190329101020-authRole",
+        "unAuthRoleName": "mobile-rest-20190329101020-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "rest",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
