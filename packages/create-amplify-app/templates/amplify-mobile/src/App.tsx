@@ -1,17 +1,11 @@
 import * as React from 'react';
-import Amplify from 'aws-amplify';
 import AWSAppSyncClient, { AUTH_TYPE, createAppSyncLink, createLinkWithCache } from 'aws-appsync';
 import { gql } from 'apollo-boost';
 import { ApolloProvider, Query, Mutation } from 'react-apollo';
 import { ApolloLink } from 'apollo-link';
 import { withClientState } from 'apollo-link-state';
 
-
 import { Text, View, Button } from 'react-native';
-
-import aws_config from './aws-exports';
-
-Amplify.configure(aws_config);
 
 const LOCAL_HELLO = gql`
   query localHello($subject: String) {

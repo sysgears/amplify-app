@@ -66,6 +66,10 @@ const templates: Template[] = [
   {
     title: '@amplify-mobile-graphql: TypeScript, Amplify (GraphQL), React Native for mobile',
     files: getTemplateFilePaths(__dirname + '/../templates/amplify-mobile')
+  },
+  {
+    title: '@amplify-mobile-rest: TypeScript, Amplify (REST), React Native for mobile',
+    files: getTemplateFilePaths(__dirname + '/../templates/amplify-mobile-rest')
   }
   // {
   //   title: '@mobile-graphql: TypeScript, Apollo (GraphQL), React Native for mobile',
